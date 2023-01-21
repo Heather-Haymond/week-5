@@ -1,0 +1,47 @@
+class Menu {
+    items: any[];
+    constructor() {
+      this.items = []; // Initialize an empty array to store menu items
+    }
+  
+    addItem(item) { // Method to add an item to the menu
+      this.items.push(item);
+    }
+  
+    viewItems() { // Method to view all items on the menu
+      console.log("Menu items:");
+      this.items.forEach((item) => {
+        console.log(`Name: ${item.name}, Price: ${item.price}`);
+      });
+    }
+  
+    deleteItem(itemName) { // Method to delete an item from the menu
+      this.items = this.items.filter((item) => item.name !== itemName);
+    }
+  }
+  
+  class MenuItem {
+    name: any;
+    price: any;
+    constructor(name, price) { // Constructor for the MenuItem class
+      this.name = name;
+      this.price = price;
+    }
+  }
+  
+  const restaurantMenu = new Menu();
+  
+  // Adding items to the menu
+  restaurantMenu.addItem(new MenuItem("Pizza", 12.99));
+  restaurantMenu.addItem(new MenuItem("Pasta", 9.99));
+  restaurantMenu.addItem(new MenuItem("Salad", 7.99));
+  
+  // Viewing the menu items
+  restaurantMenu.viewItems();
+  
+  // Deleting an item from the menu
+  restaurantMenu.deleteItem("Pizza");
+  
+  // Viewing the updated menu
+  restaurantMenu.viewItems();
+  
