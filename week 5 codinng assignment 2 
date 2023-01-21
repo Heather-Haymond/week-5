@@ -1,10 +1,10 @@
 class Menu {
     items: any[];
     constructor() {
-      this.items = []; // Initialize an empty array to store menu items
+      this.items = []; // Initialize an empty array to store menu items. encapsulates items in into munu object.
     }
   
-    addItem(item) { // Method to add an item to the menu
+    addItem(item) { // Method to add an item (function encapsulated in menu object) to the menu (object). 
       this.items.push(item);
     }
   
@@ -20,7 +20,7 @@ class Menu {
     }
   }
   
-  class MenuItem {
+  class MenuItem { 
     name: any;
     price: any;
     constructor(name, price) { // Constructor for the MenuItem class
@@ -29,7 +29,7 @@ class Menu {
     }
   }
   
-  const restaurantMenu = new Menu();
+  const restaurantMenu = new Menu(); //this creates the menu. this is where the program starts
   
   // Adding items to the menu
   restaurantMenu.addItem(new MenuItem("Pizza", 12.99));
